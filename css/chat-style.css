@@ -59,7 +59,7 @@ body.dark {
     color: #da9d1a; /* Светлый текст */
 }
 
-#vk_comments.dark {
+#vk_comments {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
@@ -67,23 +67,23 @@ body.dark {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.vk_comments_title.dark {
+.vk_comments_title {
     font-size: 20px;
     color: #333;
     margin-bottom: 10px;
 }
 
-.vk_comment.dark {
+.vk_comment {
     border-bottom: 1px solid #e0e0e0;
     padding: 10px 0;
 }
 
-.vk_comment.dark .author.dark {
+.vk_comment .author {
     font-weight: bold;
     color: #0077ff;
 }
 
-.vk_comment.dark .text.dark {
+.vk_comment .text {
     color: #555;
     font-size: 14px;
 }
