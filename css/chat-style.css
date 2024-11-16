@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: rgb(53, 66, 74);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    transition: background 0.5s, position 0.5s, border-radius 0.5s, padding 0.5s;
+    z-index: 10;
+    border-radius: 0;
+    left: 0;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f4f4f4;
+}
+
+body.dark header {
+    background: rgb(41, 41, 41);
+}
+
+body.dark {
+    background-color: #121212; /* Тёмный фон */
+    color: #da9d1a; /* Светлый текст */
+}
+
+#vk_comments.dark {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vk_comments_title.dark {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.vk_comment.dark {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.vk_comment.dark .author.dark {
+    font-weight: bold;
+    color: #0077ff;
+}
+
+.vk_comment.dark .text.dark {
+    color: #555;
+    font-size: 14px;
+}
