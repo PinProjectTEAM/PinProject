@@ -1,11 +1,24 @@
-<!-- Put this script tag to the <head> of your page -->
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
-<script type="text/javascript">
-  VK.init({ apiId: 0, onlyWidgets: true });
-</script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комментарии ВКонтакте</title>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+    <script type="text/javascript">
+        VK.init({ apiId: 52702814, onlyWidgets: true });
+    </script>
+</head>
+<body>
 
-<!-- Put this div tag to the place, where the Comments block will be -->
+<h1>Комментарии ВКонтакте</h1>
+<p>Оставьте свой комментарий ниже:</p>
+
+<!-- Комментарии ВКонтакте -->
 <div id="vk_comments"></div>
 <script type="text/javascript">
-  VK.Widgets.Comments("vk_comments", {limit: 20, attach: "*"});
+    VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
 </script>
+
+</body>
+</html>
