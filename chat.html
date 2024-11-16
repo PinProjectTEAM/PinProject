@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Комментарии ВКонтакте</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pin Project Чат!</title>
+    <link rel="stylesheet" href="css/chat-style.css">
+    <script src="js/script.js"></script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
     <script type="text/javascript">
         VK.init({ apiId: 52702814, onlyWidgets: true });
     </script>
+    <div>
+        <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+        <script type="text/javascript">
+          if ('VKIDSDK' in window) {
+            const VKID = window.VKIDSDK;
+      
+            VKID.Config.init({
+              app: 52702814,
+              redirectUrl: 'https://pinproject.sparksoftwarefoundation.ru/chat',
+              responseMode: VKID.ConfigResponseMode.Callback,
+              source: VKID.ConfigSource.LOWCODE,
+            });
+      
+            const floatingOneTap = new VKID.FloatingOneTap();
+      
+            floatingOneTap.render({
+              appName: 'coments',
+              showAlternativeLogin: true
+            })
+            .on(VKID.WidgetEvents.ERROR, vkidOnError)
+            .on(VKID.FloatingOneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+              const code = payload.code;
+              const deviceId = payload.device_id;
+      
+              VKID.Auth.exchangeCode(code, deviceId)
+                .then(vkidOnSuccess)
+                .catch(vkidOnError);
+            });
+          
+            function vkidOnSuccess(data) {
+              floatingOneTap.close();
+              
+              // Обработка полученного результата
+            }
+          
+            function vkidOnError(error) {
+              // Обработка ошибки
+            }
+          }
+        </script>
+      </div>
 </head>
 <body>
+    <header id="header">
+        <div class="container">
+            <img id="logo" src="images/pinproject.jpg" height="100">
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Главная страница</a></li>
+                </ul>
+            </nav>
+            <label class="switch">
+                <p>Тёмная тема</p><input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+<h1>Чат Pin Project</h1>
+<p>Оставьте своё сообщения ниже:</p>
 
-<h1>Комментарии ВКонтакте</h1>
-<p>Оставьте свой комментарий ниже:</p>
-
-<!-- Комментарии ВКонтакте -->
 <div id="vk_comments"></div>
 <script type="text/javascript">
     VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
