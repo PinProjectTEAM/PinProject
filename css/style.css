@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: background 0.5s, position 0.5s, border-radius 0.5s, padding 0.5s;
 }
 
 body {
@@ -9,6 +10,12 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+}
+
+header img {
+    object-fit: cover;
+    width: 330px;
+    height: 100px;
 }
 
 .container {
@@ -23,7 +30,6 @@ header {
     padding: 20px 0;
     text-align: center;
     width: 100%;
-    transition: background 0.5s, position 0.5s, border-radius 0.5s, padding 0.5s;
     z-index: 10;
     border-radius: 0;
     left: 0;
@@ -38,31 +44,33 @@ nav ul {
     list-style: none;
     padding: 0;
 }
-
 nav ul li {
     display: inline;
     margin: 0 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #f4f4f4;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
 }
 
 section {
-    padding: 20px 0;
-    margin: 20px 0;
+    padding: 40px 20px;
+    margin: 40px 20px;
     background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .about, .services, .contact {
@@ -84,11 +92,16 @@ section {
     font-size: 1.2em;
     margin: 10px 0;
 }
-
+.github a {
+    color: #ff001f;
+    text-decoration: none;
+}
 .contact p {
     font-size: 1.1em;
 }
-
+.contact a {
+    color: #ff001f;
+}
 .extra {
     background: #e2e2e2;
     padding: 60px 0;
@@ -111,11 +124,11 @@ body.dark header {
 }
 
 body.dark section {
-    background: #1c1c1c; /* Тёмный фон для секций */
+    background: #1c1c1c;
 }
 
 body.dark footer {
-    background: rgb(30, 30, 30); /* Темный цвет для подвала */
+    background: rgb(30, 30, 30);
 }
 
 footer {
@@ -125,7 +138,7 @@ footer {
     padding: 20px 0;
     position: relative;
     margin-top: 20px;
-    width: 100%; /* Чтобы занять всю ширину */
+    width: 100%;
 }
 
 footer p {
